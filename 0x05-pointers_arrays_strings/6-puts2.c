@@ -2,25 +2,23 @@
 #include "main.h"
 
 /**
- * rev_string - This function prints a string in reverse order
- * @s: pointer parameter
+ * puts2 - function that prints a string, followed by a new line, to stdout
+ * @str: pointer value
+ * Return: Always 0 (Success)
  */
 
-void rev_string(char *s)
+void puts2(char *str)
 {
-	int len, i, half;
-	char temp;
+	int i;
 
-	for (len = 0; s[len] != '\0'; len++)
-		;
 	i = 0;
-	half = len / 2;
 
-	while (half--)
+	while (str[i] != '\0')
 	{
-		temp = s[len - i - 1];
-		s[len - i - 1] = s[i];
-		s[i] = temp;
+		if (i % 2 == 0)
+			_putchar(str[i]);
 		i++;
 	}
+
+	_putchar('\n');
 }
